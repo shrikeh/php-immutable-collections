@@ -1,0 +1,9 @@
+---
+suites:
+  default:
+    namespace: Shrikeh\Collection\Examples
+    psr4_prefix: Shrikeh\Collection\Examples
+    spec_prefix: spec
+    src_path: %paths.config%/examples
+    spec_path: %paths.config%
+...

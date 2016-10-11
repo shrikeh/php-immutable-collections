@@ -5,5 +5,5 @@
 /examples export-ignore
 /spec export-ignore
 README.md export-ignore
-
+phpspec.yml export-ignore
 .* export-ignore

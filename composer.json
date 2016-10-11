@@ -1,0 +1,15 @@
+{
+    "require-dev": {
+        "phpspec/phpspec": "^3.1"
+    },
+    "config": {
+      "bin-dir": "bin"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+      "psr-4": {
+        "Shrikeh\\Collection\\": "src",
+        "Shrikeh\\Collection\\Examples\\": "examples"
+      }
+    }
+}
