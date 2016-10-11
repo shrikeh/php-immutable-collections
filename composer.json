@@ -1,4 +1,15 @@
 {
+    "name": "shrikeh/collections",
+    "type": "library",
+    "description": "Traits for re-use in immutable collections",
+    "keywords": ["library"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Barney Hanlon",
+            "email": "barney@shrikeh.net"
+        }
+    ],
     "require-dev": {
         "phpspec/phpspec": "^3.1"
     },
