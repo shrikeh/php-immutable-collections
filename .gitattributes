@@ -2,8 +2,8 @@
 *      text=auto
 *.bat  eol=crlf
 
-/examples export-ignore
-/spec export-ignore
-README.md export-ignore
+/examples   export-ignore
+/spec       export-ignore
+README.md   export-ignore
 phpspec.yml export-ignore
-.* export-ignore
+.*          export-ignore
