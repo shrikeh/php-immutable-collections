@@ -1,0 +1,9 @@
+
+*      text=auto
+*.bat  eol=crlf
+
+/examples export-ignore
+/spec export-ignore
+README.md export-ignore
+
+.* export-ignore
