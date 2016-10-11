@@ -22,5 +22,13 @@
         "Shrikeh\\Collection\\": "src",
         "Shrikeh\\Collection\\Examples\\": "examples"
       }
+    },
+    "archive": {
+      "exclude": [
+        "/examples",
+        "/spec",
+        "/phpspec.yml",
+        "/.*"
+      ]
     }
 }
