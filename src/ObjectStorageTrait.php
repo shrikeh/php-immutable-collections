@@ -2,7 +2,6 @@
 
 namespace Shrikeh\Collection;
 
-use ArrayObject;
 use Traversable;
 use SplObjectStorage;
 
