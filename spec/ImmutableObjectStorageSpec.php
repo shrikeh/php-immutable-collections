@@ -60,13 +60,11 @@ class ImmutableObjectStorageSpec extends ObjectBehavior
     }
 
     function it_can_be_constructed_from_an_iterator() {
-        $foo = new SomeObject();
-        $bar = new SomeObject();
+        $foo = SomeObject::throughNamed('foo');
+        $bar = SomeObject::throughNamed('bar');
         $iterator = new ArrayObject([$foo, $bar]);
 
-        $this->beConstructedThroughFromTraversable(
-            $iterator
-        );
+        $this->beConstructedThroughFromTraversable($iterator);
         $this->current()->shouldReturn($foo);
     }
 }
