@@ -2,7 +2,7 @@
 
 namespace Shrikeh\Collection;
 
-use Countable;
+use Traversable;
 use SplFixedArray;
 
 trait FixedArrayStorageTrait
