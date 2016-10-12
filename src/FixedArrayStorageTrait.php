@@ -7,7 +7,7 @@ use SplFixedArray;
 
 trait FixedArrayStorageTrait
 {
-    public function __construct(Countable $objects)
+    public function __construct(Traversable $objects)
     {
         $arr = [];
         foreach ($objects as $object) {
