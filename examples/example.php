@@ -23,6 +23,6 @@ echo $objectStorage->current()->say();
 
 $arrayStorage = ImmutableArrayStorage::fromTraversable($objects);
 
-foreach($arrayStorage as $object) {
+foreach ($arrayStorage as $object) {
     echo $object->say();
 }
