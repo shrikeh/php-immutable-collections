@@ -2,7 +2,7 @@ imports:
   - php
 build:
   environment:
-      php: '5.6.16'
+    php: '5.6.16'
 tools:
   php_code_sniffer:
     filter:
