@@ -15,6 +15,9 @@ trait ImmutableArrayAccessTrait
       $this->throwImmutable(sprintf($msg, static::class));
     }
 
+    /**
+     * @param string $msg
+     */
     protected function throwImmutable($msg, $errorCode = null)
     {
         throw new ImmutableCollectionException($msg, $errorCode);
