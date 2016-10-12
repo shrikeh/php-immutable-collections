@@ -11,8 +11,8 @@ trait ImmutableArrayAccessTrait
     }
 
     final public function offsetUnset($offset) {
-      $msg = 'Collection %s is immutable and values cannot be unset.';
-      $this->throwImmutable(sprintf($msg, static::class));
+        $msg = 'Collection %s is immutable and values cannot be unset.';
+        $this->throwImmutable(sprintf($msg, static::class));
     }
 
     /**
