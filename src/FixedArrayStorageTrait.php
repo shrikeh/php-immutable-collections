@@ -34,7 +34,7 @@ trait FixedArrayStorageTrait
         $this->getStorage()->rewind();
     }
 
-    protected function append($data, $key)
+    private function append($data, $key)
     {
         $msg = 'you must override the %s method';
         throw new \LogicException(sprintf($msg, __FUNCTION__));

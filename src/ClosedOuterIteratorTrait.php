@@ -11,7 +11,7 @@ trait ClosedOuterIteratorTrait
         $this->throwClosedOuterIterator(sprintf($msg, static::class));
     }
 
-    protected function throwClosedOuterIterator($msg)
+    private function throwClosedOuterIterator($msg)
     {
         throw new ClosedOuterIterator($msg);
     }

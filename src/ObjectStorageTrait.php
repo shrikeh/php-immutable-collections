@@ -32,7 +32,7 @@ trait ObjectStorageTrait
 
     abstract protected function getStorage();
 
-    protected function append($data, $key)
+    private function append($data, $key)
     {
         throw new \LogicException('you must override the append() method');
     }
