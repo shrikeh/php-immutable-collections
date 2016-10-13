@@ -3,24 +3,15 @@
 namespace Shrikeh\Collection;
 
 use Traversable;
-use OuterIterator;
 use SplObjectStorage;
-use Shrikeh\Collection\Exception\IncorrectInterface;
 
 trait ObjectStorageTrait
 {
+    use \Shrikeh\Collection\RequiresOuterIteratorTrait;
+
     public function __construct(Traversable $objects)
     {
-        if (!$this instanceof OuterIterator) {
-            $msg = 'class %s uses trait %s but it is not an %s';
-            throw new IncorrectInterface(
-                sprintf($msg,
-                    __CLASS__,
-                    __TRAIT__,
-                    'OuterIterator'
-                )
-            );
-        }
+        static::testOuterIterator($this);
         parent::__construct(new SplObjectStorage());
 
         foreach ($objects as $key => $value) {

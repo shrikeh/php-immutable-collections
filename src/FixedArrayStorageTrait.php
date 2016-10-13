@@ -3,24 +3,15 @@
 namespace Shrikeh\Collection;
 
 use Traversable;
-use OuterIterator;
 use SplFixedArray;
-use Shrikeh\Collection\Exception\IncorrectInterface;
 
 trait FixedArrayStorageTrait
 {
+    use \Shrikeh\Collection\RequiresOuterIteratorTrait;
+
     public function __construct(Traversable $objects)
     {
-        if (!$this instanceof OuterIterator) {
-            $msg = 'class %s uses trait %s but it is not an %s';
-            throw new IncorrectInterface(
-                sprintf($msg,
-                    __CLASS__,
-                    __TRAIT__,
-                    'OuterIterator'
-                )
-            );
-        }
+        static::testOuterIterator($this);
         $arr = [];
         foreach ($objects as $object) {
             $arr[] = $object;
