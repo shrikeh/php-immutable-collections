@@ -22,6 +22,7 @@ build_failure_conditions:
     - 'issues.label("coding-style").new.exists'
 
 filter:
+  paths: [ src/* ]
   excluded_paths:
     - docs/*
     - vendor/*
