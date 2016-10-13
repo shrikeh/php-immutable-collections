@@ -5,7 +5,6 @@ namespace Shrikeh\Collection;
 use Traversable;
 use OuterIterator;
 use SplFixedArray;
-
 use Shrikeh\Collection\Exception\IncorrectInterface;
 
 trait FixedArrayStorageTrait

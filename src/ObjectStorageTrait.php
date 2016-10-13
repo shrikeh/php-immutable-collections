@@ -5,7 +5,6 @@ namespace Shrikeh\Collection;
 use Traversable;
 use OuterIterator;
 use SplObjectStorage;
-
 use Shrikeh\Collection\Exception\IncorrectInterface;
 
 trait ObjectStorageTrait
