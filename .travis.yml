@@ -13,13 +13,14 @@ matrix:
 before_install:
 - |
     if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-      TRAVIS_COMMIT_RANGE="FETCH_HEAD...$TRAVIS_BRANCH"
+      TRAVIS_COMMIT_RANGE="FETCH_HEAD...${TRAVIS_BRANCH}"
     fi
-    git diff --name-only $TRAVIS_COMMIT_RANGE | grep --quiet --regexp '\.php$' || {
-      echo "No PHP files updated, stopping build process."
+    IGNORE_LIST='(\.md|rst$)|(LICENSE$)|(\.scrutinizer\.yml$)|(\.(editorconfig|gitignore|gitattributes)$)|(^(docs|examples))/'
+    git diff --name-only ${TRAVIS_COMMIT_RANGE} | grep -qvE "${IGNORE_LIST}" || {
+      echo "No build files updated, stopping build process."
       exit
     }
-    if [ "$TRAVIS_PHP_VERSION" != 'hhvm' ]; then phpenv config-rm xdebug.ini; fi
+    if [ "${TRAVIS_PHP_VERSION}" != 'hhvm' ]; then phpenv config-rm xdebug.ini; fi
     composer selfupdate
 install:
 - export COMPOSER_ROOT_VERSION=dev-master;
