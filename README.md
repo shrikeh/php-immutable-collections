@@ -37,7 +37,7 @@ final class ImmutableSomeObjectCollection extends IteratorIterator
     use \Shrikeh\Collection\ImmutableCollectionTrait; # Give it read-only array access
     use \Shrikeh\Collection\ClosedOuterIteratorTrait; # Close off access to the inner iterator
     use \Shrikeh\Collection\OuterIteratorTrait;       # Give it all the standard read access methods
-    use \Shrikeh\Collection\ObjectStorageTrait;       # Set the storage as an instance of SplObjectStorage
+    use \Shrikeh\Collection\ObjectStorageTrait;       # Set inner storage to SplObjectStorage
 
     # And type hint the relevant class/interface we need...
     protected function append(SomeObject $object, $key)
