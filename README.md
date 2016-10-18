@@ -51,18 +51,24 @@ Used to easily meet the requirements of the ArrayAccess interface. Proxies to un
 
 
 
-[build_status_img]: https://travis-ci.org/shrikeh/php-immutable-collections.svg "Build Status"
+[build_status_img]: https://img.shields.io/travis/shrikeh/php-immutable-collections.svg "Build Status"
 [build_status_travis]: https://travis-ci.org/shrikeh/php-immutable-collections
+
 [code_quality]: https://scrutinizer-ci.com/g/shrikeh/php-immutable-collections/?branch=master
 [code_quality_img]: https://img.shields.io/scrutinizer/g/shrikeh/php-immutable-collections.svg "Scrutinizer Code Quality"
-[latest_stable_version_img]: https://poser.pugx.org/shrikeh/collections/v/stable "Latest Stable Version"
+
+[latest_stable_version_img]: https://img.shields.io/packagist/v/shrikeh/collections.svg "Latest Stable Version"
 [latest_stable_version]: https://packagist.org/packages/shrikeh/collections "Latest Stable Version"
-[latest_unstable_version_img]: https://poser.pugx.org/shrikeh/collections/v/unstable "Latest Unstable Version"
+
+[latest_unstable_version_img]: https://img.shields.io/packagist/vpre/shrikeh/collections.svg "Latest Unstable Version"
 [latest_unstable_version]: https://packagist.org/packages/shrikeh/collections "Latest Unstable Version"
-[license_img]: https://poser.pugx.org/shrikeh/collections/license "License"
+
+[license_img]: https://img.shields.io/packagist/l/shrikeh/collections.svg "License"
 [license]: https://packagist.org/packages/shrikeh/collections
+
 [twitter_img]: https://img.shields.io/badge/twitter-%40shrikeh-blue.svg "@shrikeh on Twitter"
 [twitter]: https://twitter.com/shrikeh
+
 [traits]: http://php.net/manual/en/language.oop5.traits.php "Link to traits overview in PHP 5.4"
 [php7_returning_values]: http://php.net/manual/en/functions.returning-values.php "PHP 7 Returning Values"
 [ddd]: https://en.wikipedia.org/wiki/Domain-driven_design "Domain driven design definition"
