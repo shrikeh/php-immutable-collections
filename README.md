@@ -39,7 +39,8 @@ final class ImmutableSomeObjectCollection extends IteratorIterator
     use \Shrikeh\Collection\OuterIteratorTrait;       # Give it all the standard read access methods
     use \Shrikeh\Collection\ObjectStorageTrait;       # Set inner storage to SplObjectStorage
 
-    # And type hint the relevant class/interface we need...
+    # Append method is called by ObjectStorageTrait during construction, so we
+    # type hint the relevant class/interface we need...
     protected function append(SomeObject $object, $key)
     {
         $this->getStorage()->attach($object);
