@@ -28,13 +28,16 @@ namespace Shrikeh\Collection\Examples;
 use IteratorIterator;
 use Shrikeh\Collection\Examples\SomeObject;
 
+/**
+ * An immutable iterator that can only contain SomeObject objects.
+ */
 final class ImmutableSomeObjectCollection extends IteratorIterator
 {
-    use \Shrikeh\Collection\NamedConstructorsTrait;
-    use \Shrikeh\Collection\ImmutableCollectionTrait;
-    use \Shrikeh\Collection\ClosedOuterIteratorTrait;
-    use \Shrikeh\Collection\OuterIteratorTrait;
-    use \Shrikeh\Collection\ObjectStorageTrait;
+    use \Shrikeh\Collection\NamedConstructorsTrait;   # Give it named constructors
+    use \Shrikeh\Collection\ImmutableCollectionTrait; # Give it read-only array access
+    use \Shrikeh\Collection\ClosedOuterIteratorTrait; # Close off access to the inner iterator
+    use \Shrikeh\Collection\OuterIteratorTrait;       # Give it all the standard read access methods
+    use \Shrikeh\Collection\ObjectStorageTrait;       # Set the storage as an instance of SplObjectStorage
 
     # And type hint the relevant class/interface we need...
     protected function append(SomeObject $object, $key)
