@@ -45,11 +45,41 @@ final class ImmutableSomeObjectCollection extends IteratorIterator
 
 ```
 
+Please take a look in the [examples] and the [specs] for further usage.
 
-#### ArrayAccessTrait
+### Traits
+
+
+#### [ArrayAccessTrait]
 Used to easily meet the requirements of the ArrayAccess interface. Proxies to underlying `offsetX` methods of the storage.
 
+#### [ClosedOuterIteratorTrait]
+The `OuterIterator` interface specifies that a class must implement the method `getInnerIterator`, and the visibility of this method cannot be changed from public. This defeats the point of having an immutable Collection. Therefore, this trait, when applied, causes the class to throw a [`ClosedOuterIterator`][ClosedOuterIterator] exception for this method.
 
+#### [FixedArrayStorageTrait]
+
+This provides a public `__construct()` method consistent with the `IteratorIterator` family of SPL classes, providing the class with a [`SplFixedArray`][SplFixedArray] storage (`SplFixedArray`, sadly, can have it's size changed after instanstiation).
+
+
+#### [ImmutableArrayAccessTrait]
+
+This trait "switches off" the `offsetSet()` and `offsetUnset()` methods required by the ArrayAccess interface. Attempting to use either will result in a [`ImmutableCollection`][ImmutableCollection] exception being thrown.
+
+#### [ImmutableCollectionTrait]
+
+This trait is a shorthand for including the [`ArrayAccessTrait`][ArrayAccessTrait] and then overriding the setters with [`ImmutableArrayAccessTrait`][ImmutableArrayAccessTrait].
+
+#### [NamedConstructorsTrait]
+Provides the named constructors `fromTraversable()` and `fromArray()` to a Collection.
+
+#### [ObjectStorageTrait]
+This provides a public `__construct()` method consistent with the `IteratorIterator` family of SPL classes, providing the class with a [`SplObjectStorage`][SplObjectStorage] inner storage.
+
+#### [OuterIteratorTrait]
+If you don't want to extend any of the `IteratorIterator` family, but do want to implement `OuterIterator`, this trait provides the necessary methods that proxy to the inner storage.
+
+#### [RequiresOuterIteratorTrait]
+"Safety catch" trait used by `FixedArrayStorageTrait` and `ObjectStorageTrait` to ensure the class using the trait implements `OuterIterator`. Throws an [`IncorrectInterface`][IncorrectInterface] Exception if not.
 
 [build_status_img]: https://img.shields.io/travis/shrikeh/php-immutable-collections.svg "Build Status"
 [build_status_travis]: https://travis-ci.org/shrikeh/php-immutable-collections
@@ -76,3 +106,35 @@ Used to easily meet the requirements of the ArrayAccess interface. Proxies to un
 [domainexception]: http://php.net/manual/en/class.domainexception.php "PHP Domain Exception documentation"
 [arrayaccess]: http://php.net/manual/en/class.arrayaccess.php "The ArrayAccess interface"
 [outeriterator]: http://php.net/manual/en/class.outeriterator.php "The OuterIterator interface"
+
+[examples]: https://github.com/shrikeh/php-immutable-collections/tree/master/examples "Link to examples in master"
+
+[specs]: https://github.com/shrikeh/php-immutable-collections/tree/master/spec "Link to specs in master"
+
+[ArrayAccessTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/ArrayAccessTrait.php "Link to file in master"
+
+[ClosedOuterIteratorTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/ClosedOuterIteratorTrait.php "Link to file in master"
+
+[ClosedOuterIterator]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/Exception/ClosedOuterIterator.php "Link to file in master"
+
+[FixedArrayStorageTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/FixedArrayStorageTrait.php "Link to file in master"
+
+[SplFixedArray]: http://php.net/manual/en/class.splfixedarray.php "SplFixedArray class"
+
+[ImmutableArrayAccessTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/ImmutableArrayAccessTrait.php "Link to file in master"
+
+[ImmutableCollection]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/Exception/ImmutableCollection.php "Link to file in master"
+
+[ImmutableCollectionTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/ImmutableCollectionTrait.php "Link to file in master"
+
+[NamedConstructorsTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/NamedConstructorsTrait.php "Link to file in master"
+
+[ObjectStorageTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/ObjectStorageTrait.php "Link to file in master"
+
+[SplObjectStorage]: http://php.net/manual/en/class.splobjectstorage.php "SplObjectStorage documentation"
+
+[OuterIteratorTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/OuterIteratorTrait.php "Link to file in master"
+
+[RequiresOuterIteratorTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/RequiresOuterIteratorTrait.php "Link to file in master"
+
+[IncorrectInterface]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/Exception/IncorrectInterface.php "Link to file in master"
