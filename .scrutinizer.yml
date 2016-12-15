@@ -8,7 +8,7 @@ tools:
     filter:
       excluded-paths: [ spec/*, examples/* ]
     config:
-      standard: PSR2
+      standard: Symfony
 
   php_analyzer:
     filter:
