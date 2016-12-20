@@ -15,7 +15,7 @@ tmtagsHistory
 # IDE generated files #
 #######################
 .project
-.idea/
+.idea
 *.sublime-project
 *.sublime-workspace
 atlassian-ide-plugin.xml
