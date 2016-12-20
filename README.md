@@ -16,6 +16,15 @@ This pattern has been successful for me, as I can also strongly type the Collect
 
 So as I use these more often, I split them up into Traits for re-use across my code. Feel free to use for yourself, they're tiny and just take care of boilerplate stuff for me.
 
+## Installation
+
+Recommended installation is via the ubiquitous and seminal [`composer`][composer]:
+
+```bash
+composer require --prefer-dist shrikeh/collections
+```
+
+
 ## Usage
 The library consists of about a dozen traits that aid in matching core PHP and SPL interfaces such as [`ArrayAccess`][arrayaccess] and [`OuterIterator`][outeriterator]. Generally I have an inner "storage", and ensure that access to this directly is removed, including mutable methods such as `offSetSet()` or `offsetUnset()`. This ensures that only the values added to the constructor can be iterated over.
 
@@ -114,6 +123,8 @@ If you don't want to extend any of the `IteratorIterator` family, but do want to
 [examples]: https://github.com/shrikeh/php-immutable-collections/tree/master/examples "Link to examples in master"
 
 [specs]: https://github.com/shrikeh/php-immutable-collections/tree/master/spec "Link to specs in master"
+
+[composer]: https://getcomposer.org/ "Link to composer website"
 
 [ArrayAccessTrait]: https://github.com/shrikeh/php-immutable-collections/blob/master/src/ArrayAccessTrait.php "Link to file in master"
 
