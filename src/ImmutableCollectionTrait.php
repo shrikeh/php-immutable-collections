@@ -1,6 +1,10 @@
 <?php
 namespace Shrikeh\Collection;
 
+/**
+ * Trait ImmutableCollectionTrait
+ * @package Shrikeh\Collection
+ */
 trait ImmutableCollectionTrait
 {
     use \Shrikeh\Collection\ArrayAccessTrait;

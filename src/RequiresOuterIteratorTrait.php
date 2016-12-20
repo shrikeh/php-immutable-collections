@@ -5,8 +5,15 @@ namespace Shrikeh\Collection;
 use OuterIterator;
 use Shrikeh\Collection\Exception\IncorrectInterface;
 
+/**
+ * Class RequiresOuterIteratorTrait
+ * @package Shrikeh\Collection
+ */
 trait RequiresOuterIteratorTrait
 {
+    /**
+     * @param $class
+     */
     private static function testOuterIterator($class)
     {
         if (!$class instanceof OuterIterator) {
@@ -16,7 +23,7 @@ trait RequiresOuterIteratorTrait
                     $msg,
                     __CLASS__,
                     __TRAIT__,
-                    'OuterIterator'
+                    OuterIterator::class
                 )
             );
         }
