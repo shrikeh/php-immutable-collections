@@ -5,6 +5,10 @@ namespace Shrikeh\Collection\Examples;
 use Shrikeh\Collection\Immutable;
 use Shrikeh\Collection\Examples\SomeObject;
 
+/**
+ * Class IncorrectlySetupStorage
+ * @package Shrikeh\Collection\Examples
+ */
 final class IncorrectlySetupStorage
 {
     use \Shrikeh\Collection\NamedConstructorsTrait;
