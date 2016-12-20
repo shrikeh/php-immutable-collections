@@ -10,7 +10,10 @@ use Shrikeh\Collection\Exception\ClosedOuterIterator;
 trait ClosedOuterIteratorTrait
 {
     /**
+     * Remove access to the interface-defined getInnerIterator(), therefore
+     * enforcing immutability.
      *
+     * @throws ClosedOuterIterator
      */
     final public function getInnerIterator()
     {
@@ -19,7 +22,7 @@ trait ClosedOuterIteratorTrait
     }
 
     /**
-     * @param $msg
+     * @param $msg The message in the exception.
      */
     private function throwClosedOuterIterator($msg)
     {
