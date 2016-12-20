@@ -23,6 +23,9 @@ trait ObjectStorageTrait
         $this->getStorage()->rewind();
     }
 
+    /**
+     * @return mixed
+     */
     abstract protected function getStorage();
 
     /**

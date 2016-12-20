@@ -10,8 +10,11 @@ use Shrikeh\Collection\Exception\ImmutableCollection as ImmutableCollectionExcep
 trait ImmutableArrayAccessTrait
 {
     /**
+     * Immutable collections should not have setters or unsetters.
+     *
      * @param $offset
      * @param $data
+     * @throws ImmutableCollectionException
      */
     final public function offsetSet($offset, $data)
     {
@@ -20,7 +23,10 @@ trait ImmutableArrayAccessTrait
     }
 
     /**
+     * Immutable collections should not have setters or unsetters.
+     *
      * @param $offset
+     * @throws ImmutableCollectionException
      */
     final public function offsetUnset($offset)
     {
@@ -30,6 +36,7 @@ trait ImmutableArrayAccessTrait
 
     /**
      * @param string $msg
+     * @throws ImmutableCollectionException
      */
     protected function throwImmutable($msg, $errorCode = null)
     {

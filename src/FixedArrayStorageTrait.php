@@ -11,6 +11,9 @@ use SplFixedArray;
  */
 trait FixedArrayStorageTrait
 {
+    /**
+     * Enforce that this trait is applied to an OuterIterator
+     */
     use \Shrikeh\Collection\RequiresOuterIteratorTrait;
 
     /**
@@ -19,11 +22,15 @@ trait FixedArrayStorageTrait
      */
     public function __construct(Traversable $objects)
     {
+        /**
+         * Test this is an outer iterator.
+         */
         static::testOuterIterator($this);
         $arr = [];
-        foreach ($objects as $object) {
-            $arr[] = $object;
+        foreach ($objects as $key => $object) {
+            $arr[$key] = $object;
         }
+
         parent::__construct(new SplFixedArray(count($arr)));
 
         foreach ($arr as $index => $obj) {
@@ -42,5 +49,8 @@ trait FixedArrayStorageTrait
         throw new \LogicException(sprintf($msg, __FUNCTION__));
     }
 
+    /**
+     * @return mixed
+     */
     abstract protected function getStorage();
 }

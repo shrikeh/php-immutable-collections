@@ -12,7 +12,9 @@ use Shrikeh\Collection\Exception\IncorrectInterface;
 trait RequiresOuterIteratorTrait
 {
     /**
+     * Test that the given class is an instance of OuterIterator
      * @param $class
+     * @throws IncorrectInterface if the class isn't an OuterIterator
      */
     private static function testOuterIterator($class)
     {
