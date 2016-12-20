@@ -12,7 +12,8 @@ trait RequiresOuterIteratorTrait
         if (!$class instanceof OuterIterator) {
             $msg = 'class %s uses trait %s but it is not an %s';
             throw new IncorrectInterface(
-                sprintf($msg,
+                sprintf(
+                    $msg,
                     __CLASS__,
                     __TRAIT__,
                     'OuterIterator'

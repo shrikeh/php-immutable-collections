@@ -5,12 +5,14 @@ use Shrikeh\Collection\Exception\ImmutableCollection as ImmutableCollectionExcep
 
 trait ImmutableArrayAccessTrait
 {
-    final public function offsetSet($offset, $data) {
+    final public function offsetSet($offset, $data)
+    {
         $msg = 'Collection %s is immutable and values cannot be set.';
         $this->throwImmutable(sprintf($msg, static::class));
     }
 
-    final public function offsetUnset($offset) {
+    final public function offsetUnset($offset)
+    {
         $msg = 'Collection %s is immutable and values cannot be unset.';
         $this->throwImmutable(sprintf($msg, static::class));
     }

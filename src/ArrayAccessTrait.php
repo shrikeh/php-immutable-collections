@@ -1,6 +1,7 @@
 <?php
 
 namespace Shrikeh\Collection;
+
 /**
  * Trait ArrayAccessTrait
  * @package Shrikeh\Collection
@@ -11,7 +12,8 @@ trait ArrayAccessTrait
      * @param $offset
      * @return mixed
      */
-    public function offsetExists($offset) {
+    public function offsetExists($offset)
+    {
         return $this->getStorage()->offsetExists($offset);
     }
 
@@ -19,7 +21,8 @@ trait ArrayAccessTrait
      * @param $offset
      * @return mixed
      */
-    public function offsetGet($offset) {
+    public function offsetGet($offset)
+    {
         return $this->getStorage()->offsetGet($offset);
     }
 
@@ -28,7 +31,8 @@ trait ArrayAccessTrait
      * @param $data
      * @return mixed
      */
-    public function offsetSet($offset, $data) {
+    public function offsetSet($offset, $data)
+    {
         return $this->getStorage()->offsetSet($offset, $data);
     }
 
@@ -36,7 +40,8 @@ trait ArrayAccessTrait
      * @param $offset
      * @return mixed
      */
-    public function offsetUnset($offset) {
+    public function offsetUnset($offset)
+    {
         return $this->getStorage()->offsetUnset($offset);
     }
 
