@@ -7,7 +7,13 @@ namespace Shrikeh\Collection;
  */
 trait ImmutableCollectionTrait
 {
+    /**
+     * Allow this iterator to be used like ArrayAccess.
+     */
     use \Shrikeh\Collection\ArrayAccessTrait;
+    /**
+     * Make this colleciton immutable after construction.
+     */
     use \Shrikeh\Collection\ImmutableArrayAccessTrait
     {
         ImmutableArrayAccessTrait::offsetSet insteadof ArrayAccessTrait;
